@@ -51,6 +51,7 @@ To push a container image to DockerHub, you'd first need to have the image tagge
 <br>
 
 My DockerHub repository can be found here: https://hub.docker.com/repository/docker/schneider228/schneider-ceg3120/general
+<br>
 
 # Part 2 - GitHub Actions and DockerHub
 
@@ -64,4 +65,8 @@ I set the secrets DOCKER_USERNAME and DOCKER_TOKEN, containing my username and l
 The GitHub workflow script intends to build and push the docker image to DockerHub. It also has to log in in order to push. 
 
 It can be found [HERE](.github/workflows/docker.yml)
+
+<br>
+
+If a user wanted to duplicate my project, they'd need their own project-specific details for their own DockerHub account, get their own login token and create the secrets, and update some things in the workflow script to their own repository. If they have different site files than I do, there would need to be some replacements in the Dockerfile. Other than those project-specific things, this project is general enough.
 
