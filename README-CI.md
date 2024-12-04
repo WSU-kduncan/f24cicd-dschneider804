@@ -20,13 +20,22 @@ it copies in the site data with `COPY`,
 
 and installing `@angular/cli` gives the global command line dependency for Angular, with `RUN npm install` giving the Angular application dependencies.
 
-Finally, the ``CMD`` line runs the Angular host for external access. Right now, the `0.0.0.0` line simply means localhost.
+Finally, the ``CMD`` line runs the Angular host for external access. Right now, the `0.0.0.0` line has it listen on all network interfaces.
 
 <br>
 
 Build the Dockerfile by going to its directory and using `docker build -t`.
+
 <br>
 
+You run the container with `docter run -p HOST:CONTAINER IMAGENAME` where `HOST` is the address on the port, and `CONTAINER` is the port on the container. -d for detach is also a particularly useful flag to run the container in the background.
 
+<br>
+
+For example, to run my `angular-bird container` on port 3000 with localhost, the command would be `docker run -d -p 127.0.0.1:3000:3000 angular_bird`. I could view this by going to [https://localhost:3000](https://localhost:3000)
+
+<br>
+
+## Working with DockerHub
 
 
