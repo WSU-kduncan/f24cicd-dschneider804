@@ -62,7 +62,7 @@ You can set GitHub secrets by going to the settings of the repository. On the se
 I set the secrets DOCKER_USERNAME and DOCKER_TOKEN, containing my username and login token respectively.
 
 ## Behavior of GitHub Workflow
-The GitHub workflow script intends to build and push the docker image to DockerHub. It also has to log in in order to push. 
+The GitHub workflow script intends to build and push the docker image to DockerHub. It also has to log in in order to push. It's supposed to trigger on any pushes to the main branch.
 
 It can be found [HERE](.github/workflows/docker.yml)
 
