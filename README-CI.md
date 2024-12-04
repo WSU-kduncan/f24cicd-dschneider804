@@ -35,7 +35,6 @@ You run the container with `docter run -p HOST:CONTAINER IMAGENAME` where `HOST`
 
 For example, to run my `angular-bird container` on port 3000 with localhost, the command would be `docker run -d -p 127.0.0.1:3000:3000 angular_bird`. I could view this by going to [https://localhost:3000](https://localhost:3000)
 
-<br>
 
 ## Working with DockerHub
 
@@ -53,4 +52,16 @@ To push a container image to DockerHub, you'd first need to have the image tagge
 
 My DockerHub repository can be found here: https://hub.docker.com/repository/docker/schneider228/schneider-ceg3120/general
 
+# Part 2 - GitHub Actions and DockerHub
+
+## Configuring Github Secrets
+
+You can set GitHub secrets by going to the settings of the repository. On the security tab, you can find "secrets and variables," and add repository secrets.
+
+I set the secrets DOCKER_USERNAME and DOCKER_TOKEN, containing my username and login token respectively.
+
+## Behavior of GitHub Workflow
+The GitHub workflow script intends to build and push the docker image to DockerHub. It also has to log in in order to push. 
+
+It can be found [HERE](.github/workflows/docker.yml)
 
