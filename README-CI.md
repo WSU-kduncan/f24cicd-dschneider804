@@ -8,9 +8,13 @@ To build & configure a container, create a `Dockerfile`. Build the Dockerfile by
 
 
 The `Dockerfile` in this repository first starts with node.js based on Alpine Linux,
+
 then defines the default app directory with `WORKDIR`,
+
 it copies in the site data with `COPY`,
+
 and installing `@angular/cli` gives the global command line dependency for Angular, with `RUN npm install` giving the Angular application dependencies.
+
 Finally, the ``CMD`` line runs the Angular host for external access. Right now, the `0.0.0.0` line simply means localhost.
 
 
