@@ -1,3 +1,5 @@
+# Part 1 - Docker-ize it
+
 ## CI Project Overview
 This project is an attempt to build and configure an Angular website, containerized and deployed using Docker. Containerizing like this is really convenient; I can ship the application into a scalable, accessible, and consistent place.
 
