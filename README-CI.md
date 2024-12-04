@@ -38,4 +38,18 @@ For example, to run my `angular-bird container` on port 3000 with localhost, the
 
 ## Working with DockerHub
 
+The DockerHub website makes it pretty easy to create a public repository. It's in the top-right corner of the Repositories tab, and it'll ask you for a namespace (probably just your own account), a repository name, a short description, and its visibility.
+
+<br>
+
+Docker's CLI has a `docker login` command. It'll ask for your DockerHub username and password there. There are other authentication methods, like a personal access token, which will be gone in to later in this document.
+
+<br>
+
+To push a container image to DockerHub, you'd first need to have the image tagged with your username and repository name. If it's not, tag it with `docker tag USERNAME/REPOSITORY:<TagName>`. To push it, the command is pretty much the same format in push form: `docker push USERNAME/REPOSITORY:<TagName>`
+
+<br>
+
+My DockerHub repository can be found here: https://hub.docker.com/repository/docker/schneider228/schneider-ceg3120/general
+
 
