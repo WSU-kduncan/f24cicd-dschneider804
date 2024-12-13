@@ -2,13 +2,21 @@ name: Build and Push Docker Image to DockerHub
 
 on:
   push:
-    branches:
-      - main 
+    tags:
+      - '*'
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
+    - name: Get Docker Tags
+    - uses: docker/metadata-action@v4
+      with:
+          tags: |
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=raw,value=latest 
     - name: Log in to Docker Hub
       uses: docker/login-action@v3
       with:
@@ -17,6 +25,13 @@ jobs:
     - name: Build Docker Image
       run: |
         docker build -t ${{ secrets.DOCKER_USERNAME }}/angular-bird:latest
+        docker tag ${{ secrets.DOCKER_USERNAME }}/angular-bird:latest ${{ secrets.DOCKER_USERNAME }}/angular-bird:$version
+        docker tag ${{ secrets.DOCKER_USERNAME }}/angular-bird:latest ${{ secrets.DOCKER_USERNAME }}/angular-bird:$major
+        docker tag ${{ secrets.DOCKER_USERNAME }}/angular-bird:latest ${{ secrets.DOCKER_USERNAME }}/angular-bird:$major.$minor
     - name: Push Docker Image
       run: |
         docker push ${{ secrets.DOCKER_USERNAME }}/angular-bird:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/angular-bird:$version
+        docker push ${{ secrets.DOCKER_USERNAME }}/angular-bird:$major
+        docker push ${{ secrets.DOCKER_USERNAME }}/angular-bird:$major.$minor
+
