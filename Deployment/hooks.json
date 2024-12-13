@@ -1,0 +1,7 @@
+[
+  {
+    "id": "update-container",
+    "execute-command": "containerupdate.sh",
+    "command-working-directory": "/var/webhook"
+  }
+]
