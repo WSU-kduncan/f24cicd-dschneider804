@@ -26,6 +26,9 @@ You might wanna have this service on startup. This can be done using a systemd f
 
 ## References
 Besides what I hyperlinked in this document, I used several websites' documentations and online resources to figure out what to do here. Particularly helpful ones, and ones anyone picking this up may want to learn from are as follows:
+
 [Medium article on GitHub webhooks](https://levelup.gitconnected.com/automated-deployment-using-docker-github-actions-and-webhooks-54018fc12e32)
+
 [Linux handbook guide for systemd files](https://linuxhandbook.com/create-systemd-services/)
+
 [DockerDocs for GitHub action stuff](https://docs.docker.com/build/ci/github-actions/manage-tags-labels/)
