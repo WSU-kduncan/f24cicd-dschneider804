@@ -1,0 +1,7 @@
+[Service]
+ExecStart=/var/webhook -hooks hooks.json
+WorkingDirectory=/var/webhook
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
